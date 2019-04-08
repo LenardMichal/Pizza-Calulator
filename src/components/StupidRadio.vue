@@ -7,6 +7,8 @@
         type="radio"
         :name="name"
         :value="firstValue"
+        ref="firstInput"
+        
       />
     </label>
     <label>
@@ -16,6 +18,8 @@
         type="radio"
         :name="name"
         :value="secondValue"
+        ref="secondInput"
+        
       />
     </label>
   </div>
@@ -52,12 +56,47 @@ export default {
   watch: {
     value(){
       this.$emit('input-changed', this.value);
+      
+    },
+  
+  },
+  mounted(){
+      this.styleLabel(this.$refs.firstInput);
+      this.styleLabel(this.$refs.secondInput);
+      
+  },
+  updated(){
+    this.styleLabel(this.$refs.firstInput);
+    this.styleLabel(this.$refs.secondInput);
+  },
+  methods: {
+    styleLabel(element){
+      if(element.checked){
+        element.parentElement.classList.add('active');
+      }else{
+        element.parentElement.classList.remove('active');
+      }
     }
   }
+  
   
 }
 </script>
 <style scoped>
-  
+  label{
+    background-color: deepskyblue;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    z-index: 16;
+    
+  }
+  input{
+    opacity: 0;
+    
+  }
+  .active{
+    background-color: red;
+  }
 </style>
 

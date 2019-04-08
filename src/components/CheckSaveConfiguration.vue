@@ -1,4 +1,5 @@
 <template>
+ <div>
   <label>
   Do you wish to save?
     <input
@@ -6,6 +7,7 @@
       v-model="save"
     />
   </label>
+ </div>
 
 </template>
 

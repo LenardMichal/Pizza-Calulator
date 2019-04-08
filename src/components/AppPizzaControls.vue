@@ -1,6 +1,10 @@
 <template>
-  <div>
-     <button @click='appendToArray(getPizza)'>Add</button>
+  <div class="controls">
+     <button
+        class="controls--button"
+        @click='appendToArray(getPizza)'>
+        Add
+     </button>
      <input-radius />
      <input-price />
      <input-count />
@@ -29,3 +33,15 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .controls{
+    border: 1px black solid;
+    height: auto;
+    
+  }
+  .controls--button{
+   
+  }
+
+</style>
+

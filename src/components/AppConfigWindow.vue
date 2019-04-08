@@ -1,8 +1,10 @@
 <template>
   <div>
     <button @click="showWindow = !showWindow">ShowConfig</button>
-    <div v-if="showWindow">
-      <config-window />
+    <div
+     v-if="showWindow"
+     >
+      <config-window @close-window="showWindow = false"/>
     </div>
   </div>
 </template>
