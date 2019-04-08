@@ -1,19 +1,31 @@
 <template>
   <div id="app">
-    <app-counter />
-    <app-show-counter />
+    Free pizza calculator:
+    <app-pizza-controls />
+    <app-pizza-table />
+    <app-config-window />
   </div>
 </template>
 
 <script>
-import AppCounter from './components/AppCounter.vue'
-import AppShowCounter from './components/AppShowCounter.vue';
+import AppPizzaControls from './components/AppPizzaControls.vue'
+import AppPizzaTable from './components/AppPizzaTable.vue'
+import AppConfigWindow from './components/AppConfigWindow.vue'
 
 export default {
   name: 'app',
   components: {
-    AppCounter,
-    AppShowCounter,
+    AppPizzaControls,
+    AppPizzaTable,
+    AppConfigWindow,
+  },
+  computed: {
+    pizza(){
+      return this.$store.getters.getPizza
+    }
+  },
+  methods: {
+  
   }
 }
 </script>

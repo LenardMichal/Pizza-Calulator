@@ -1,30 +1,15 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import {
-  getters
-} from './getters'
-import {
-  mutations
-} from './mutations'
-import {
-  actions
-} from './actions';
-import {
-  state
-} from './state';
+import Vue from "vue";
+import Vuex from "vuex";
+// eslint-disable-next-line
+import pizza from "./modules/pizza";
+import pizzas from "./modules/pizzas";
+import units from "./modules/units";
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
-  state: {
-    ...state
+  modules: {
+    pizza,
+    pizzas,
+    units,
   },
-  mutations: {
-    ...mutations
-  },
-  actions: {
-    ...actions
-  },
-  getters: {
-    ...getters
-  }
-})
+});
