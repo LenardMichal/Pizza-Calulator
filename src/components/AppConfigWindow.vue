@@ -1,10 +1,25 @@
 <template>
-  <div>
-    <button @click="showWindow = !showWindow">ShowConfig</button>
+  <div class="configWindow">
+    <button 
+    @click="showWindow = !showWindow"
+    class="configWindow--button"
+    >
+    COG
+    </button>
+
     <div
+    class='configWindow--window'
      v-if="showWindow"
      >
-      <config-window @close-window="showWindow = false"/>
+
+      <config-window
+        class="configWindow--box"
+        />
+      <div class="configWindow--veil"
+        @click="showWindow = false"
+      >
+        
+      </div>
     </div>
   </div>
 </template>
@@ -31,17 +46,32 @@ export default {
 }
 </script>
 <style scoped>
-  div{
+  .configWindow{
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
   }
   
-  button{
+  .configWindow--button{
     color: white;
     background-color: green;
+    z-index: 20;
+
+  }
+
+  .configWindow--veil{
+    background-color: rgba(30, 30, 30, 0.8);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 18;
   }
   
+  .configWindow--box{
+    z-index: 20;
+  }
 </style>
 
 

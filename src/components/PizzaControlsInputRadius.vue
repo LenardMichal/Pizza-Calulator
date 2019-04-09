@@ -1,14 +1,16 @@
 <template>
-  <div>
+  <div class='inputRadius'>
     <stupid-radio 
+      class="inputRadius__radio"
       name="radius"
       firstOption="Diameter"
       secondOption="Radius"
       @input-changed="setDiameterStatus($event)"
     />
-    <label>
-    Size of:
+    <label class="inputRadius__label">
+    Size:
     <input 
+      class="inputRadius__input"
       v-model="radius"
       type="number"
     />
@@ -45,6 +47,18 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-  
+<style lang='less' scoped>
+   @import '../styles/main.less';
+   .inputRadius{
+    .componentMain()
+  }
+  .inputRadius__label{
+    .componentLabel()    
+  }
+  .inputRadius__radio{
+    .componentRadio()
+  }
+  .inputRadius__input{
+    .componentInput()
+  }
 </style>

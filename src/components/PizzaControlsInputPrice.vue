@@ -1,15 +1,17 @@
 <template>
-  <div>
+  <div class="inputPrice">
     <stupid-radio
+    class="inputPrice__radio"
     name='price'
     firstOption="Unit"
     secondOption="Total"
     @input-changed="setPizzaCost($event)"
     />
-    <label>
+    <label class="inputPrice__label">
     Price:
     <input 
-      v-model="price"
+      class="inputPrice__input"
+      v-model.number="price"
       type="number"
     />
     <span v-html="currencyType"></span>
@@ -43,3 +45,21 @@ export default {
   }
 }
 </script>
+<style lang='less' scoped>
+  @import '../styles/main.less';
+
+  .inputPrice{
+    .componentMain()
+  }
+  .inputPrice__label{
+    .componentLabel()
+    
+  }
+  .inputPrice__radio{
+    .componentRadio()
+  }
+  .inputPrice__input{
+    .componentInput()
+  }
+  
+</style>

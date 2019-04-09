@@ -5,9 +5,9 @@
         @click='appendToArray(getPizza)'>
         Add
      </button>
-     <input-radius />
-     <input-price />
-     <input-count />
+     <input-radius class="controls--inputRadius"/>
+     <input-price class="controls--inputPrice"/>
+     <input-count class="controls--inputCount" />
   </div>
 </template>
 <script>
@@ -35,12 +35,32 @@ export default {
 </script>
 <style scoped>
   .controls{
-    border: 1px black solid;
     height: auto;
+    position: absolute;
+    top: 80px;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    width: 100vw;
+    left: 0;
     
   }
   .controls--button{
-   
+   background-color: var(--second-color);
+   color: white;
+   padding: 10px;
+   font-weight: 600;
+   border-radius: 15px;
+   grid-row: 4/5;
+  }
+
+  .controls--inputCount{
+    grid-row: 1/2;
+  }
+  .controls--inputRadius{
+    grid-row: 2/3
+  }
+  .controls--inputPrice{
+    grid-row: 3/4
   }
 
 </style>

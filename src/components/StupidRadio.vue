@@ -1,8 +1,9 @@
 <template>
-  <div>
-    <label>
+  <div class='radioComponent'>
+    <label class='radioComponent__label'>
       {{ firstOption }}:
       <input
+        class="radioComponent__input"
         v-model="value"
         type="radio"
         :name="name"
@@ -11,7 +12,7 @@
         
       />
     </label>
-    <label>
+    <label class='radioComponent__label'>
       {{ secondOption }}:
       <input
         v-model="value"
@@ -19,7 +20,7 @@
         :name="name"
         :value="secondValue"
         ref="secondInput"
-        
+        class="radioComponent__input"
       />
     </label>
   </div>
@@ -72,9 +73,9 @@ export default {
   methods: {
     styleLabel(element){
       if(element.checked){
-        element.parentElement.classList.add('active');
+        element.parentElement.classList.add('radioComponent__label--active');
       }else{
-        element.parentElement.classList.remove('active');
+        element.parentElement.classList.remove('radioComponent__label--active');
       }
     }
   }
@@ -82,21 +83,29 @@ export default {
   
 }
 </script>
-<style scoped>
-  label{
-    background-color: deepskyblue;
+<style lang='less' scoped>
+  @import '../styles/main.less';
+ 
+  .radioComponent{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+  }
+  .radioComponent__label{
+    background-color: @second-color;
+    color: white;
     padding: 10px;
     border-radius: 10px;
     margin: 5px;
-    z-index: 16;
-    
+    width: auto; 
   }
-  input{
+
+ 
+  .radioComponent__input{
     opacity: 0;
     
   }
-  .active{
-    background-color: red;
+  .radioComponent__label--active{
+    background-color: @comp-color !important;
   }
 </style>
 
