@@ -35,15 +35,19 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='less'>
+  @import '../styles/main.less';
   .currencyButton{
-    background-color: var(--second-color);
+    background-color: @second-color;
     color: white;
     padding: 5px;
     font-size: 1.2rem;
+    border: 0;
+    margin: 4px;
+    border-radius: 4px;
   }
 
   .currencyButton--active{
-    background-color: var(--comp-color);
+    background-color: @comp-color;
   }
 </style>

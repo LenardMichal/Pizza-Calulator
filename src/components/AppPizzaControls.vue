@@ -1,13 +1,19 @@
 <template>
   <div class="controls">
      <button
-        class="controls--button"
+        class="controls__button"
         @click='appendToArray(getPizza)'>
         Add
      </button>
-     <input-radius class="controls--inputRadius"/>
-     <input-price class="controls--inputPrice"/>
-     <input-count class="controls--inputCount" />
+     <button
+      class='controls__button--clear'
+      @click='clearArray()'
+      >
+      Clear
+      </button>
+     <input-radius class="controls__inputRadius"/>
+     <input-price class="controls__inputPrice"/>
+     <input-count class="controls__inputCount" />
   </div>
 </template>
 <script>
@@ -23,7 +29,8 @@ export default {
   },
   methods: {
     ...mapActions([
-      'appendToArray'
+      'appendToArray',
+      'clearArray'
     ])
   },
   computed: { 
@@ -33,34 +40,50 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang='less'>
+  @import '../styles/main.less';
+
   .controls{
     height: auto;
     position: absolute;
     top: 80px;
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: auto repeat(3, 1fr);
+    grid-template-columns: 60% 40%;
     width: 100vw;
     left: 0;
     
   }
-  .controls--button{
-   background-color: var(--second-color);
+  .controls__button{
+   background-color: @second-color;
    color: white;
    padding: 10px;
    font-weight: 600;
    border-radius: 15px;
-   grid-row: 4/5;
+   grid-row: ~'4/5';
+   grid-column: ~'1/2';
+   &:hover{
+     background-color: @second-color-light;
+   }
+  }
+  .controls__button--clear{
+    .controls__button();
+    grid-row: ~'4/5';
+    grid-column: ~'2/3';
+    background-color: darken(@comp-color, 30%);
   }
 
-  .controls--inputCount{
-    grid-row: 1/2;
+  .controls__inputCount{
+    grid-column: ~'1/3';
+    grid-row: ~'1/2';
   }
-  .controls--inputRadius{
-    grid-row: 2/3
+  .controls__inputRadius{
+    grid-row: ~'2/3';
+    grid-column: ~'1/3';
   }
-  .controls--inputPrice{
-    grid-row: 3/4
+  .controls__inputPrice{
+    grid-row: ~'3/4';
+    grid-column: ~'1/3';
   }
 
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class='radioComponent'>
     <label class='radioComponent__label'>
-      {{ firstOption }}:
+      {{ firstOption }}
       <input
         class="radioComponent__input"
         v-model="value"
@@ -13,7 +13,7 @@
       />
     </label>
     <label class='radioComponent__label'>
-      {{ secondOption }}:
+      {{ secondOption }}
       <input
         v-model="value"
         type="radio"
@@ -91,21 +91,33 @@ export default {
     grid-template-columns: 0.5fr 0.5fr;
   }
   .radioComponent__label{
-    background-color: @second-color;
+    background-color: @comp-color;
     color: white;
     padding: 10px;
     border-radius: 10px;
     margin: 5px;
-    width: auto; 
+    text-align: center;
+    width: 70%;
+    &:hover{
+      background-color: @comp-color
+    }
+    
   }
-
  
+
   .radioComponent__input{
     opacity: 0;
+    position: relative;
+    left:-40px;
     
   }
   .radioComponent__label--active{
-    background-color: @comp-color !important;
+    background-color: @second-color !important;
+    box-shadow: 4px 4px 2px 2px black;
+    
+    &:hover{
+      background-color: lighten(@second-color, 10%) !important;
+    }
   }
 </style>
 

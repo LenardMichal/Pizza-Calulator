@@ -4,7 +4,10 @@
     @click="showWindow = !showWindow"
     class="configWindow--button"
     >
-    COG
+    <icon-cog 
+    stroke='#fff'
+    fill="#fff"
+    />
     </button>
 
     <div
@@ -25,10 +28,12 @@
 </template>
 <script>
 import ConfigWindow from './ConfigWindow.vue'
+import IconCog from './IconCog.vue'
 
 export default {
   components: {
     ConfigWindow,
+    IconCog,
   },
   data(){
     return{
@@ -45,18 +50,28 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang='less'>
+@import '../styles/main.less';
   .configWindow{
     position: absolute;
-    top: 10px;
+    top: 80px;
     right: 10px;
+
   }
   
   .configWindow--button{
-    color: white;
-    background-color: green;
+    background-color: lighten(@second-color, 20%);
     z-index: 20;
+    height: 25px;
+    width: 25px;
+    box-sizing: content-box;
+    border-radius: 5px;
+    border: 0;
+    padding: 5px;
 
+    &:hover{
+      background-color: @main-color-light;
+    }
   }
 
   .configWindow--veil{
@@ -71,6 +86,9 @@ export default {
   
   .configWindow--box{
     z-index: 20;
+    position: absolute;
+    top: 34px;
+    left: -166px;
   }
 </style>
 

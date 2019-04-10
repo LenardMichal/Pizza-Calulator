@@ -34,3 +34,11 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+  p{
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+  }
+</style>

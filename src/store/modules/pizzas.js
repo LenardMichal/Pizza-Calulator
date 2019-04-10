@@ -12,6 +12,9 @@ const mutations = {
   appendToArray: (state, payload) => {
     state.pizzas.push(payload);
   },
+  clearArray: state => {
+    state.pizzas = [];
+  },
 };
 
 const actions = {
@@ -24,6 +27,9 @@ const actions = {
       _payload.unitValue /= _payload.count;
     }
     commit("appendToArray", _payload);
+  },
+  clearArray: ({ commit }) => {
+    commit("clearArray");
   },
 };
 

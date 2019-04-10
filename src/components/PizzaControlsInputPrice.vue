@@ -13,6 +13,8 @@
       class="inputPrice__input"
       v-model.number="price"
       type="number"
+      min='0'
+      step="0.01"
     />
     <span v-html="currencyType"></span>
     </label>

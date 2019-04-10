@@ -10,11 +10,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
+@import '../styles/main.less';
+
   .title{
     width: 100vw;
     height: 50px;
-    background-color: var(--main-color);
+    background-color: @main-color;
     font-weight: 800;
     text-align: center;
     color: white;

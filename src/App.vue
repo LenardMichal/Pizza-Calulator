@@ -31,15 +31,7 @@ export default {
 }
 </script>
 
-<style>
-  :root{
-    --main-color: #00B25C;
-    --main-color-light: #36D88A;
-    --second-color: #0A67A3;
-    --second-color-light: #65A6D1;
-    --comp-color: #FF7140;
-  }
-  
+<style lang='less'>
 
 
 #app {
@@ -49,6 +41,8 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  min-width: 350px;
+  max-width: 500px;
 }
 
 

@@ -32,3 +32,8 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+  div{
+    padding-bottom: 5px;
+  }
+</style>

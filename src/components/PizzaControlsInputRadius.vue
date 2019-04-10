@@ -13,6 +13,8 @@
       class="inputRadius__input"
       v-model="radius"
       type="number"
+      min='0'
+      step="0.1"
     />
     {{ unitType }}
     </label>

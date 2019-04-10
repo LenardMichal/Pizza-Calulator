@@ -50,7 +50,7 @@ export default {
     width: 200px;
     height: auto;
     background-color: darkgray;
-    top: 12px;
+    top: -50px;
     right: 0;
   }
 </style>
