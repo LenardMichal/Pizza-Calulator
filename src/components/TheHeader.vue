@@ -14,7 +14,7 @@ export default {
 @import '../styles/main.less';
 
   .title{
-    width: 100vw;
+    width: 100%;
     height: 50px;
     background-color: @main-color;
     font-weight: 800;

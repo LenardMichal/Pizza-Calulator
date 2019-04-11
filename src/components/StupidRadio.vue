@@ -88,7 +88,7 @@ export default {
  
   .radioComponent{
     display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-columns: 50% 50%;
   }
   .radioComponent__label{
     background-color: @comp-color;

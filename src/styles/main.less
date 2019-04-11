@@ -4,6 +4,8 @@
   @second-color: #0A67A3;
   @second-color-light: #65A6D1;
   @comp-color: #FF7140;
+  @viewport-width: 100vw;
+
 
 
 
@@ -15,13 +17,15 @@
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 1fr;
+  width: 100%;
+  max-width: 500px;
 }
 .componentLabel{
   grid-column: ~"1/2";
   grid-row: ~"1/2";
   margin-left: 5px;
   min-width: 170px;
-  width: 40vw;
+  width: 40%;
   margin-top: 10px;
   font-size: 1.5rem;
   
@@ -45,3 +49,9 @@
   }
 }
 
+
+//Mixins
+.centerElement{
+  left: 50%;
+  transform: translateX(-50%);
+}

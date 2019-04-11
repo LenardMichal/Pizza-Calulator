@@ -57,7 +57,7 @@ export default {
   .pizzaTable{
     position: absolute;
     top: 350px;
-    left: 0;
+    .centerElement();
     
   }
   .pizzaTable__list{
@@ -66,7 +66,7 @@ export default {
 
   .pizzaTable__list--item{
     background-color: @second-color;
-    width: 100vw;
+    width: 100%;
     color: white;
     margin: 0;
     font-size: 1.2rem;

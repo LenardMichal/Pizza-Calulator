@@ -3,6 +3,7 @@
     <the-header />
     <app-pizza-controls />
     <app-pizza-table />
+    
     <app-config-window />
   </div>
 </template>
@@ -38,12 +39,13 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   min-width: 350px;
   max-width: 500px;
+ 
 }
-
 
 </style>

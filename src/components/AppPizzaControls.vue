@@ -44,15 +44,16 @@ export default {
   @import '../styles/main.less';
 
   .controls{
-    height: auto;
-    position: absolute;
-    top: 80px;
     display: grid;
     grid-template-rows: auto repeat(3, 1fr);
     grid-template-columns: 60% 40%;
-    width: 100vw;
-    left: 0;
-    
+    position: absolute;
+    width: 100%;
+    min-width: 350px;
+    max-width: 500px;
+    margin: 0 auto;
+    top: 80px;
+    .centerElement();
   }
   .controls__button{
    background-color: @second-color;
